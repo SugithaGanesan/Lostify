@@ -1,0 +1,40 @@
+
+<style>
+  body { font-family: 'Times New Roman', serif; text-align: center; }
+  .certificate-container { max-width: 800px; margin: auto; padding: 30px; }
+  .certificate-border { border: 15px double #1a3e72; padding: 40px; background: #f9f6e5; }
+  .logo { height: 80px; margin-bottom: 10px; }
+  h1 { color: #1a3e72; font-size: 28px; text-transform: uppercase; letter-spacing: 2px; }
+  h2 { color: #333; font-size: 22px; margin: 5px 0; }
+  .recipient-name { font-size: 32px; font-weight: bold; margin: 20px 0; color: #1a3e72; }
+  .item-box { border: 2px dashed #1a3e72; padding: 10px; margin: 10px auto; font-size: 20px; display: inline-block; }
+  p { margin: 10px 0; font-size: 16px; }
+</style>
+
+<div class="certificate-container">
+  <div class="certificate-border">
+    <div class="certificate-header">
+      <img src="C:\Users\G.Sugitha\OneDrive\Desktop\lostify\lostify\server\public\logo.png" alt="College Logo" class="logo">
+
+
+      <h1>Certificate of Appreciation</h1>
+      <h2>VELLORE INSTITUTE OF TECHNOLOGY</h2>
+      <p class="motto">"In Wisdom and Virtue"</p>
+    </div>
+
+    <div class="certificate-body">
+      <p class="intro-text">This honor is bestowed upon</p>
+      <div class="recipient-name">{{name}}</div>
+      <p class="recognition-text">
+        For demonstrating exceptional honesty and community spirit<br>
+        by finding and returning the lost item:
+      </p>
+      <div class="item-box">"{{item}}"</div>
+
+      <p class="inspirational-quote">
+        "Integrity is doing the right thing, even when no one is watching."<br>
+        - C.S. Lewis
+      </p>
+    </div>
+  </div>
+</div>
