@@ -4,9 +4,10 @@ document.getElementById("statusFilter")?.addEventListener("change", loadItems);
 
 // ✅ Backend URLs (Updated to Render)
 const BASE_URL = "https://lostify-backend-2w1e.onrender.com";
-const ITEMS_API = `${BASE_URL}/api/items`;
-const UPLOAD_API = `${BASE_URL}/api/upload`;
-const FEEDBACK_API = `${BASE_URL}/api/feedback`;
+const ITEMS_API = "https://lostify-backend-2w1e.onrender.com/api/items";
+const UPLOAD_API = "https://lostify-backend-2w1e.onrender.com/api/upload";
+const FEEDBACK_API = "https://lostify-backend-2w1e.onrender.com/api/feedback";
+
 
 // ✅ Load Items
 async function loadItems() {
