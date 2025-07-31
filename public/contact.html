@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - Lostify</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ✅ Navbar -->
+  <header class="navbar">
+    <div class="logo">🔍 Lostify</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="upload.html">Upload Item</a>
+      <a href="success.html">Success Stories</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </header>
+
+  <main>
+    <center>
+    <h1>Contact Us</h1>
+    <p>Have questions or need help? Reach out to us!</p>
+
+    <form id="contactForm">
+  <input type="text" id="cname" placeholder="Your Name" required><br><br>
+  <input type="email" id="cemail" placeholder="Your Email" required><br><br>
+  <textarea id="cmessage" placeholder="Your Message"></textarea><br><br>
+  <button type="submit">Send Message</button>
+</form>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const name = document.getElementById("cname").value;
+  const email = document.getElementById("cemail").value;
+  const message = document.getElementById("cmessage").value;
+
+  const res = await fetch("http://localhost:5000/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, email, message })
+  });
+
+  const data = await res.json();
+  alert(data.message);
+  document.getElementById("contactForm").reset();
+});
+</script>
+</center>
+  </main>
+
+  <!-- ✅ Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Lostify <span class="emoji">🔍</span></h3>
+        <p class="tagline">Reuniting lost items with their owners since 2025</p>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="about.html">About Us <span class="emoji">ℹ️</span></a></li>
+          <li><a href="success.html">Success Stories <span class="emoji">🎉</span></a></li>
+          <li><a href="contact.html">Contact <span class="emoji">📩</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Lostify | Helping Lost Things Get Found <span class="emoji">❤️</span></p>
+    </div>
+  </footer>
+
+  <!-- ✅ Animation script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("loaded");
+    });
+  </script>
+</body>
+</html>

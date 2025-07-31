@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lostify - Upload Item</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ✅ Navbar -->
+  <header class="navbar">
+    <div class="logo">🔍 Lostify</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="upload.html">Upload Item</a>
+      <a href="success.html">Success Stories</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </header>
+
+  <main>
+    <center>
+    <h2>Upload a Lost/Found Item</h2>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="text" id="title" placeholder="Item Title" required><br><br>
+      <textarea id="description" placeholder="Description"></textarea><br><br>
+      <input type="text" id="location" placeholder="Location"><br><br>
+      <select id="status" required>
+        <option value="">Select Status</option>
+        <option value="lost">Lost</option>
+        <option value="found">Found</option>
+      </select><br><br>
+      <input type="file" id="image" accept="image/*"><br><br>
+      <button type="submit">Upload Item</button>
+    </form>
+    </center>
+  </main>
+
+  <!-- ✅ Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Lostify <span class="emoji">🔍</span></h3>
+        <p class="tagline">Reuniting lost items with their owners since 2025</p>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="about.html">About Us <span class="emoji">ℹ️</span></a></li>
+          <li><a href="success.html">Success Stories <span class="emoji">🎉</span></a></li>
+          <li><a href="contact.html">Contact <span class="emoji">📩</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Lostify | Helping Lost Things Get Found <span class="emoji">❤️</span></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- ✅ Animation script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("loaded");
+    });
+  </script>
+</body>
+</html>

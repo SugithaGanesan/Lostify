@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lostify – Where Lost Things Get Found</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ✅ Navbar at the top -->
+  <header class="navbar">
+    <div class="logo">🔍 Lostify</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="upload.html">Upload Item</a>
+      <a href="success.html">Success Stories</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </header>
+
+  <header>
+    <center>
+    <h1>Lostify</h1>
+    <p class="tagline">Where Lost Things Get Found</p>
+  </center>
+  </header>
+
+  <main>
+    <h2>All Items</h2>
+    <div class="search-filter">
+  <input type="text" id="searchBox" placeholder="Search items...">
+  <select id="statusFilter">
+    <option value="">All</option>
+    <option value="lost">Lost</option>
+    <option value="found">Found</option>
+    <option value="returned">Returned</option>
+  </select>
+</div>
+<div id="loader" class="loader"></div>
+<div id="items-container"></div>
+  </main>
+
+  <footer class="site-footer">
+    <!-- your footer content here -->
+  </footer>
+
+  <script src="script.js"></script>
+
+
+  <!-- ✅ Animation script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("loaded");
+    });
+  </script>
+</body>
+</html>

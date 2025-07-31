@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lostify - Success Stories</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ✅ Navbar -->
+  <header class="navbar">
+    <div class="logo">🔍 Lostify</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="upload.html">Upload Item</a>
+      <a href="success.html">Success Stories</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </header>
+
+  <header>
+    <h1>Lostify Success Stories</h1>
+  </header>
+
+  <main>
+    <div id="success-container"></div>
+  </main>
+
+  <!-- ✅ Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Lostify <span class="emoji">🔍</span></h3>
+        <p class="tagline">Reuniting lost items with their owners since 2025</p>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="about.html">About Us <span class="emoji">ℹ️</span></a></li>
+          <li><a href="success.html">Success Stories <span class="emoji">🎉</span></a></li>
+          <li><a href="contact.html">Contact <span class="emoji">📩</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Lostify | Helping Lost Things Get Found <span class="emoji">❤️</span></p>
+    </div>
+  </footer>
+
+  <script>
+    const API = "http://localhost:5000/api/items";
+    async function loadSuccess() {
+      const res = await fetch(API);
+      const items = await res.json();
+      const container = document.getElementById("success-container");
+      const returned = items.filter(i => i.status === 'returned');
+      if (returned.length === 0) {
+        container.innerHTML = "<p>No success stories yet.</p>";
+        return;
+      }
+      returned.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "item-card";
+        div.innerHTML = `<h3>${item.title}</h3><p>${item.description}</p><p>Location: ${item.location}</p>`;
+        container.appendChild(div);
+      });
+    }
+    loadSuccess();
+  </script>
+
+  <!-- ✅ Animation script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("loaded");
+    });
+  </script>
+</body>
+</html>
